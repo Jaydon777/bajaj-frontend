@@ -3,6 +3,7 @@ import axios from "axios";
 import Select from "react-select";
 import "./App.css";
 
+
 const options = [
   { value: "Alphabets", label: "Alphabets" },
   { value: "Numbers", label: "Numbers" },
@@ -60,8 +61,12 @@ function App() {
   };
 
   return (
+    
     <div className="App">
-      <h1>21BRS1419</h1>
+      <div className="Box">
+
+   
+      <h1>Bajaj Technical Challenge</h1>
 
       {/* JSON Input Field */}
       <div>
@@ -79,7 +84,7 @@ function App() {
       {/* Display Dropdown only after valid JSON submission */}
       {response && (
         <>
-          <div>
+          <div className="Filter">
             <label>Multi Filter</label>
             <Select
               isMulti
@@ -92,19 +97,24 @@ function App() {
           </div>
 
           {/* Display Filtered Response */}
-          <h2>Filtered Response</h2>
+          <h3>Filtered Response</h3>
           {filteredResponse.numbers && (
-            <p>Numbers: {filteredResponse.numbers.join(",")}</p>
+            <p><strong>Numbers:</strong> {filteredResponse.numbers.join(",")}</p>
           )}
           {filteredResponse.alphabets && (
-            <p>Alphabets: {filteredResponse.alphabets.join(",")}</p>
+            <p><strong>Alphabets: </strong>{filteredResponse.alphabets.join(",")}</p>
           )}
           {filteredResponse.highest_lowercase_alphabet && (
-            <p>{filteredResponse.highest_lowercase_alphabet.join(",")}</p>
+            <p><strong>Highest lowercase alphabet: </strong>{filteredResponse.highest_lowercase_alphabet.join(",")}</p>
           )}
         </>
       )}
+      </div>
+      <div>
+        <h4>Developed by <a href="https://portfolio-jaddu.firebaseapp.com/">J Haniel Jaydon</a></h4>
+      </div>
     </div>
+    
   );
 }
 
