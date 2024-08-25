@@ -24,7 +24,7 @@ function App() {
       setIsValidJson(true);
 
       // Call API with parsed JSON
-      const res = await axios.post("http://localhost:3000/bfhl", parsedJson);
+      const res = await axios.post("https://bajaj-backend-hx87.onrender.com//bfhl", parsedJson);
       console.log("API Response:", res.data); // Debugging
       setResponse(res.data); // Set the API response
     } catch (error) {
